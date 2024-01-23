@@ -2,7 +2,9 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "bradlc.vscode-tailwindcss",
-    "editorconfig.editorconfig"
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode"
   ],
   "unwantedRecommendations": []
 }

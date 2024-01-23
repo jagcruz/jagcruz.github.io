@@ -1,4 +1,25 @@
 {
   "editor.formatOnSave": true,
-  "files.eol": "\n"
+  "editor.rulers": [100],
+  "files.eol": "\n",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "*.astro": "${capture}.ts, ${capture}.tsx, ${capture}.js, ${capture}.jsx, ${capture}.mdx, ${capture}.md",
+    "tsconfig.json": "tsconfig.*.json,tsconfig.tsbuildinfo",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    ".env": ".env.*",
+    ".gitignore": ".gitkeep,.gitattributes",
+    ".prettierrc.*": ".prettierignore",
+    ".eslintrc.*": ".eslintignore"
+  }
 }
