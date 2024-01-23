@@ -1,0 +1,30 @@
+{
+  "name": "jagcruz.github.io",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "private": true,
+  "repository": "github:jagcruz/jagcruz.github.io",
+  "author": {
+    "name": "Jaime Alan Gutiérrez Cruz",
+    "url": "https://github.com/jagcruz"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "astro": "^4.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "packageManager": "pnpm@8.14.1"
+}
