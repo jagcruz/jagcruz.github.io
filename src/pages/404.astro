@@ -1,17 +1,19 @@
 ---
-
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<main class="flex h-screen w-screen flex-col items-center justify-center px-12">
-  <img src="/assets/img/misc/404.svg" width="512" class="mx-auto" />
+<BaseLayout title="JAGC" description="Jaime Alan Gutiérrez Cruz | Not Found">
+  <main class="flex h-screen w-screen flex-col items-center justify-center bg-white px-12">
+    <img src="/assets/img/misc/404.svg" width="512" class="mx-auto" />
 
-  <div class="-mt-16 text-center">
-    <h1 class="text-jagc pb-12 text-5xl font-extrabold drop-shadow-xl sm:text-8xl">
-      Page not found
-    </h1>
+    <div class="-mt-16 text-center">
+      <h1 class="pb-12 text-5xl font-extrabold text-jagc drop-shadow-xl sm:text-8xl">
+        Page not found
+      </h1>
 
-    <p class="text-lg font-semibold text-slate-950 sm:text-4xl">
-      Sorry, the page you are looking for could not be found or has been removed.
-    </p>
-  </div>
-</main>
+      <p class="text-lg font-semibold text-slate-950 sm:text-4xl">
+        Sorry, the page you are looking for could not be found or has been removed.
+      </p>
+    </div>
+  </main>
+</BaseLayout>
