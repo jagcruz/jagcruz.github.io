@@ -21,7 +21,8 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.2.3"
+    "astro": "^4.2.3",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
@@ -43,5 +44,5 @@
   "engines": {
     "node": ">=20.11.0"
   },
-  "packageManager": "pnpm@8.14.1"
+  "packageManager": "pnpm@8.15.2"
 }
