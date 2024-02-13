@@ -1,0 +1,78 @@
+---
+import LinkedInIcon from '@icons/LinkedIn.astro';
+import GitHubIcon from '@icons/GitHub.astro';
+import DiscordIcon from '@icons/Discord.astro';
+
+const socialMediaItems = [
+  { icon: GitHubIcon, href: 'https://github.com/jagcruz' },
+  { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jagcruz' },
+  { icon: DiscordIcon, href: 'https://discordapp.com/users/719730313802154115' }
+];
+---
+
+<section class="relative flex h-screen w-full items-center justify-between px-[10%] pb-0 pt-16">
+  <div class="max-w-md animate-fade-right animate-duration-500 animate-ease-linear">
+    <h3 class="text-3xl font-bold">Hello, It's Me</h3>
+    <h1 class="-my-1 mx-0 text-6xl font-extrabold">Jaime Guti&eacute;rrez</h1>
+
+    <h3 class="mb-8 text-3xl font-bold">
+      And I'm a <span id="typed-text" class="text-cyan-500"></span>
+    </h3>
+
+    <p class="text-base">
+      I've been working in software development for more than 5 years. I have worked with different
+      technologies and frameworks, but I have specialized in React and Node.js for the last 3 years.
+    </p>
+
+    <div class="flex gap-8 py-8">
+      {
+        socialMediaItems.map(item => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="duration-400 inline-flex size-10 items-center justify-center rounded-full border-2 border-solid border-cyan-500 bg-transparent text-xl text-cyan-500 no-underline transition ease-linear hover:bg-cyan-500 hover:text-gray-900 hover:shadow-[0_0_1rem] hover:shadow-cyan-600"
+          >
+            {<item.icon />}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex gap-4">
+      <a
+        href="#"
+        class="inline-block rounded-3xl bg-cyan-500 px-7 py-3 text-base font-bold tracking-wide text-gray-900 no-underline shadow-[0_0_10px] shadow-cyan-600"
+        >Let's talk</a
+      >
+      <a
+        href="#"
+        class="inline-block rounded-3xl bg-cyan-500 px-7 py-3 text-base font-bold tracking-wide text-gray-900 no-underline shadow-[0_0_10px] shadow-cyan-600"
+        >Download CV</a
+      >
+    </div>
+  </div>
+
+  <div class="animate-jump-in animate-delay-200 animate-duration-500 animate-ease-in">
+    <picture>
+      <source srcset="/assets/img/profile/profile-pic.avif" />
+      <source srcset="/assets/img/profile/profile-pic.webp" />
+      <img
+        src="/assets/img/profile/profile-pic.png"
+        alt="Jaime Gutiérrez"
+        class="max-w-xl animate-float animate-delay-500 animate-duration-[4s] animate-infinite animate-ease-linear"
+      />
+    </picture>
+  </div>
+</section>
+
+<script>
+  import Typed from 'typed.js';
+  new Typed('#typed-text', {
+    strings: ['Software Engineer', 'Frontend Developer'],
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 1200,
+    loop: true
+  });
+</script>

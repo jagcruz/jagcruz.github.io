@@ -1,0 +1,33 @@
+---
+const navItems = [
+  { text: 'Home', href: '#' },
+  { text: 'About', href: '#' },
+  { text: 'Experience', href: '#' },
+  { text: 'Skills', href: '#' },
+  { text: 'Projects', href: '#' },
+  { text: 'Contact', href: '#' }
+];
+---
+
+<header
+  class="sticky left-0 top-0 z-[100] flex w-full items-center justify-between bg-transparent px-[10%] py-3"
+>
+  <a
+    href="#"
+    class="animate-fade-right cursor-default text-5xl font-semibold text-white no-underline animate-duration-500 animate-ease-linear"
+    >JAGC</a
+  >
+
+  <nav class="animate-fade-left animate-duration-500 animate-ease-linear">
+    {
+      navItems.map(item => (
+        <a
+          href={item.href}
+          class="ml-9 text-lg font-medium text-white no-underline transition-all duration-300 hover:text-cyan-500 active:text-cyan-500"
+        >
+          {item.text}
+        </a>
+      ))
+    }
+  </nav>
+</header>
