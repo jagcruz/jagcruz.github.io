@@ -1,8 +1,12 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontFamily: { mono: ['Fira Code Variable', ...defaultTheme.fontFamily.mono] },
       animation: { float: 'float 3s' },
       keyframes: {
         float: {
@@ -12,6 +16,8 @@ export default {
         }
       },
       colors: {
+        line: '#1E2D3D',
+        main: '#011627',
         jagc: {
           DEFAULT: '#cc0404',
           50: '#fff0f0',

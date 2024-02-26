@@ -1,59 +1,58 @@
 ---
-import LinkedInIcon from '@icons/LinkedIn.astro';
-import GitHubIcon from '@icons/GitHub.astro';
-import DiscordIcon from '@icons/Discord.astro';
-
-const socialMediaItems = [
-  { icon: GitHubIcon, href: 'https://github.com/jagcruz' },
-  { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jagcruz' },
-  { icon: DiscordIcon, href: 'https://discordapp.com/users/719730313802154115' }
-];
+import HeroIcons from '@components/HeroIcons.astro';
 ---
 
-<section class="relative flex h-screen w-full items-center justify-between px-[10%] pb-0 pt-16">
-  <div class="max-w-md animate-fade-right animate-duration-500 animate-ease-linear">
-    <h3 class="text-3xl font-bold">Hello, It's Me</h3>
-    <h1 class="-my-1 mx-0 text-6xl font-extrabold">Jaime Guti&eacute;rrez</h1>
+<section class="flex size-full gap-6">
+  <div class="z-40 flex size-full flex-col justify-center gap-4 font-mono">
+    <h3 class="animate-fade-right text-2xl font-thin">Hello all, It's me</h3>
 
-    <h3 class="mb-8 text-3xl font-bold">
-      And I'm a <span id="typed-text" class="text-cyan-500"></span>
+    <h1 class="animate-fade-left text-7xl font-extrabold animate-duration-500 animate-ease-in-out">
+      Jaime Guti&eacute;rrez
+    </h1>
+
+    <h3
+      class="mb-8 animate-fade-right text-3xl font-bold text-[#4D5BCE] animate-duration-500 animate-ease-in-out"
+    >
+      {'>'} And I'm a <span id="typed-text" class="text-[#FEA55F]"></span>
     </h3>
 
-    <p class="text-base">
-      I've been working in software development for more than 5 years. I have worked with different
-      technologies and frameworks, but I have specialized in React and Node.js for the last 3 years.
-    </p>
-
-    <div class="flex gap-8 py-8">
+    <ul
+      class="animate-fade-up text-base text-[#607B96] animate-delay-100 animate-duration-700 animate-ease-in-out"
+    >
       {
-        socialMediaItems.map(item => (
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="duration-400 inline-flex size-10 items-center justify-center rounded-full border-2 border-solid border-cyan-500 bg-transparent text-xl text-cyan-500 no-underline transition ease-linear hover:bg-cyan-500 hover:text-gray-900 hover:shadow-[0_0_1rem] hover:shadow-cyan-600"
-          >
-            {<item.icon />}
-          </a>
-        ))
+        [
+          ' Cuban engineer based in Uruguay with more than 5 years',
+          ' of experience working in software development. I have worked',
+          ' with different technologies and frameworks, but',
+          ' I have specialized in React and Node.js for the last 3 years.'
+        ].map(text => <li class="before:content-['//']">{text}</li>)
       }
-    </div>
+    </ul>
 
-    <div class="flex gap-4">
-      <a
-        href="#"
-        class="inline-block rounded-3xl bg-cyan-500 px-7 py-3 text-base font-bold tracking-wide text-gray-900 no-underline shadow-[0_0_10px] shadow-cyan-600"
-        >Let's talk</a
-      >
-      <a
-        href="#"
-        class="inline-block rounded-3xl bg-cyan-500 px-7 py-3 text-base font-bold tracking-wide text-gray-900 no-underline shadow-[0_0_10px] shadow-cyan-600"
-        >Download CV</a
-      >
-    </div>
+    <a
+      href="#"
+      class="flex w-fit animate-fade-up gap-2 text-base font-semibold text-white no-underline animate-delay-150 animate-duration-700 animate-ease-in-out hover:rounded-md hover:bg-line/50 hover:outline hover:outline-offset-4 hover:outline-line"
+    >
+      <span class="text-[#4D5BCE]">const</span>
+      <span class="text-[#43D9AD]">curriculumVitae</span>
+      <span> = </span>
+      <span class="text-[#E99287]">"https://click.here/to-get-my-cv"</span>
+    </a>
+
+    <a
+      href="#"
+      class="-mt-2 flex w-fit animate-fade-up gap-2 text-base font-semibold text-white no-underline animate-delay-200 animate-duration-700 animate-ease-in-out hover:rounded-md hover:bg-line/50 hover:outline hover:outline-offset-4 hover:outline-line"
+    >
+      <span class="text-[#4D5BCE]">const</span>
+      <span class="text-[#43D9AD]">letsTalk</span>
+      <span> = </span>
+      <span class="text-[#E99287]">"https://click.here/to-let_s-talk"</span>
+    </a>
   </div>
 
-  <div class="animate-jump-in animate-delay-200 animate-duration-500 animate-ease-in">
+  <div
+    class="z-40 flex size-full animate-jump-in items-center justify-end animate-delay-200 animate-duration-500 animate-ease-in"
+  >
     <picture>
       <source srcset="/assets/img/profile/profile-pic.avif" />
       <source srcset="/assets/img/profile/profile-pic.webp" />
@@ -61,9 +60,12 @@ const socialMediaItems = [
         src="/assets/img/profile/profile-pic.png"
         alt="Jaime Gutiérrez"
         class="max-w-xl animate-float animate-delay-500 animate-duration-[4s] animate-infinite animate-ease-linear"
+        width="100%"
       />
     </picture>
   </div>
+
+  <HeroIcons />
 </section>
 
 <script>

@@ -1,0 +1,48 @@
+---
+import XIcon from '@icons/X.astro';
+import FacebookIcon from '@icons/Facebook.astro';
+import LinkedInIcon from '@icons/LinkedIn.astro';
+import GitHubIcon from '@icons/GitHub.astro';
+import DiscordIcon from '@icons/Discord.astro';
+
+const socials = [
+  { href: 'https://www.linkedin.com/in/jagcruz', icon: LinkedInIcon },
+  { href: 'https://twitter.com/Tyto993', icon: XIcon },
+  { href: 'https://discordapp.com/users/719730313802154115', icon: DiscordIcon },
+  { href: 'https://www.facebook.com/jagutierrezcruz', icon: FacebookIcon }
+];
+---
+
+<footer
+  class="z-50 flex max-h-14 min-h-14 w-full items-center border-t border-t-line bg-transparent font-mono text-base font-semibold text-[#607B96] no-underline"
+>
+  <span
+    class="flex h-full animate-fade-right items-center border-r border-r-line pl-6 pr-3 animate-duration-500 animate-ease-linear"
+  >
+    Find me in:
+  </span>
+
+  {
+    socials.map(({ href, icon: Icon }) => (
+      <a
+        class="flex h-full animate-fade-right items-center border-r border-r-line px-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-red-500"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon />
+      </a>
+    ))
+  }
+
+  <span class="flex h-full flex-1 justify-end">
+    <a
+      class="flex h-full animate-fade-left items-center gap-2 border-l border-l-line pl-6 pr-6 transition-all duration-300 animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-red-500"
+      href="https://github.com/jagcruz"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @jagcruz <GitHubIcon />
+    </a>
+  </span>
+</footer>

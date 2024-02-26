@@ -1,0 +1,55 @@
+---
+import '@fontsource-variable/fira-code';
+
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  showGradient?: boolean;
+}
+
+const { title, description, showGradient = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <ViewTransitions />
+
+    <meta charset="UTF-8" />
+    <meta name="description" property="og:description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="h-screen w-screen select-none overflow-hidden bg-[#010c15] p-16 text-white">
+    <div
+      class="border-line bg-main relative z-[100] flex size-full animate-fade flex-col gap-1 overflow-hidden rounded-lg border shadow-2xl shadow-[#010C15]"
+    >
+      {
+        showGradient && (
+          <div class="absolute left-0 top-0 -z-50 size-full animate-pulse blur-3xl animate-duration-[5000ms] animate-ease-in before:absolute before:bottom-36 before:right-32 before:-z-10 before:size-96 before:rounded-full before:bg-[#4D5BCE] before:blur-3xl after:absolute after:right-72 after:top-32 after:-z-10 after:size-72 after:rounded-full after:bg-[#43D9AD] after:blur-3xl" />
+        )
+      }
+
+      <slot />
+    </div>
+
+    <style is:global>
+      :root {
+        color-scheme: dark;
+      }
+    </style>
+  </body>
+</html>

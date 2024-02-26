@@ -1,0 +1,56 @@
+---
+const navItems = [
+  { id: 'home', text: '_home', href: import.meta.env.BASE_URL },
+  { id: 'experience', text: '_experience', href: '#' },
+  { id: 'projects', text: '_projects', href: '#' },
+  { id: 'about', text: '_about-me', href: '#' }
+];
+
+interface Props {
+  active?: 'home' | 'experience' | 'projects' | 'about' | 'contact';
+}
+
+const { active = 'home' } = Astro.props;
+---
+
+<header
+  class="z-50 flex max-h-14 min-h-14 w-full items-center border-b border-b-line bg-transparent font-mono text-[#607B96] no-underline"
+>
+  <h4
+    class="flex h-full w-64 items-center border-r border-r-line pl-6 text-base font-semibold animate-duration-500 animate-ease-linear"
+  >
+    <a
+      href={import.meta.env.BASE_URL}
+      class="flex min-w-60 animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc"
+    >
+      <img src="/favicon.svg" alt="Logo" class="h-9" alt="JAGC Logo" />
+      jaime-gutierrez
+    </a>
+  </h4>
+
+  <nav class="flex h-full flex-1 animate-fade-left animate-duration-500 animate-ease-linear">
+    {
+      navItems.map(({ id, href, text }) => (
+        <a
+          href={href}
+          class:list={[
+            'flex h-full items-center border-r border-r-line px-2 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
+            { 'border-b-2 border-b-jagc-500 text-red-500': id === active }
+          ]}
+        >
+          {text}
+        </a>
+      ))
+    }
+
+    <span class="flex flex-1 justify-end">
+      <a
+        href="#"
+        class:list={[
+          'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
+          { 'border-b-2 border-b-jagc-500 text-red-500': active === 'contact' }
+        ]}>_contact-me</a
+      >
+    </span>
+  </nav>
+</header>
