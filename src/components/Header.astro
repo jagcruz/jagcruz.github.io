@@ -2,9 +2,9 @@
 import type { THeaderItemId, THeaderItem } from '@contracts';
 
 const navItems: THeaderItem[] = [
-  { id: 'home', text: '_home', href: '/' },
-  { id: 'about', text: '_about-me', href: '/about' },
-  { id: 'projects', text: '_projects', href: 'projects' }
+  { id: 'home', text: '_home', href: import.meta.env.BASE_URL },
+  { id: 'about', text: '_about-me', href: `${import.meta.env.BASE_URL}about` },
+  { id: 'projects', text: '_projects', href: '/projects' }
 ];
 
 interface Props {
