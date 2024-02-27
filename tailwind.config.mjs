@@ -48,5 +48,9 @@ export default {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animated')]
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animated')
+  ]
 };
