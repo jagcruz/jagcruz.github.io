@@ -19,7 +19,7 @@ const { title, description, active, showGradient = false } = Astro.props;
 <EditorLayout showGradient={showGradient} title={title} description={description}>
   <Header active={active} />
 
-  <main class="relative flex-1 pl-64 pr-52">
+  <main class="relative flex flex-1">
     <slot />
   </main>
 

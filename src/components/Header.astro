@@ -1,10 +1,12 @@
 ---
 import type { THeaderItemId, THeaderItem } from '@contracts';
 
+const baseURL = import.meta.env.PROD ? `${import.meta.env.SITE}/` : import.meta.env.BASE_URL;
+
 const navItems: THeaderItem[] = [
-  { id: 'home', text: '_home', href: import.meta.env.SITE },
-  { id: 'about', text: '_about-me', href: `${import.meta.env.SITE}/about` },
-  { id: 'projects', text: '_projects', href: `${import.meta.env.SITE}/projects` }
+  { id: 'home', text: '_home', href: baseURL },
+  { id: 'about', text: '_about-me', href: `${baseURL}about` },
+  { id: 'projects', text: '_projects', href: `${baseURL}projects` }
 ];
 
 interface Props {
@@ -21,7 +23,7 @@ const { active = 'home' } = Astro.props;
     class="flex h-full w-64 items-center border-r border-r-line pl-6 text-base font-semibold animate-duration-500 animate-ease-linear"
   >
     <a
-      href={import.meta.env.SITE}
+      href={baseURL}
       class="flex min-w-60 animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc"
     >
       <img src="/favicon.svg" alt="Logo" class="h-9" alt="JAGC Logo" />
@@ -46,7 +48,7 @@ const { active = 'home' } = Astro.props;
 
     <span class="flex flex-1 justify-end">
       <a
-        href={`${import.meta.env.SITE}/contact`}
+        href={`${baseURL}contact`}
         class:list={[
           'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
           { 'border-b-2 border-b-jagc-500 text-red-500': active === 'contact' }
