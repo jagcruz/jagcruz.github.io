@@ -1,0 +1,27 @@
+---
+import type { THeaderItemId } from '@contracts';
+
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+import EditorLayout from './EditorLayout.astro';
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  showGradient?: boolean;
+  active?: THeaderItemId;
+}
+
+const { title, description, active, showGradient = false } = Astro.props;
+---
+
+<EditorLayout showGradient={showGradient} title={title} description={description}>
+  <Header active={active} />
+
+  <main class="relative flex-1 pl-64 pr-52">
+    <slot />
+  </main>
+
+  <Footer />
+</EditorLayout>

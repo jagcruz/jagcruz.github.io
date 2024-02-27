@@ -1,12 +1,15 @@
 ---
-import ErrorLayout from '@layouts/ErrorLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<ErrorLayout title="JAGC | Software and Web Developer" description="Jaime Alan Gutiérrez Cruz">
+<BaseLayout
+  title="JAGC | Software Developer"
+  description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
+>
   <main class="flex size-full flex-col items-center justify-center gap-4 font-mono">
     <div class="relative flex size-40 items-center justify-center">
       <div
-        class="border-line shadow-main before:border-line after:border-line relative z-0 flex size-full items-center justify-center overflow-hidden rounded-full border bg-transparent shadow-2xl before:absolute before:inset-5 before:rounded-full before:border before:border-dashed before:bg-transparent before:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] before:content-[''] after:absolute after:size-12 after:rounded-full after:border after:border-dashed after:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] after:content-['']"
+        class="relative z-0 flex size-full items-center justify-center overflow-hidden rounded-full border border-line bg-transparent shadow-2xl shadow-main before:absolute before:inset-5 before:rounded-full before:border before:border-dashed before:border-line before:bg-transparent before:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] before:content-[''] after:absolute after:size-12 after:rounded-full after:border after:border-dashed after:border-line after:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] after:content-['']"
       >
         <span
           class="absolute left-1/2 top-1/2 h-full w-1/2 origin-top-left animate-[radar_2s_linear_infinite] border-t border-dashed border-t-white bg-transparent drop-shadow-[20px_20px_20px_#cc0404] before:absolute before:left-0 before:top-0 before:size-full before:origin-top-left before:-rotate-[55deg] before:bg-jagc/45 before:blur-xl before:content-['']"
@@ -32,7 +35,7 @@ import ErrorLayout from '@layouts/ErrorLayout.astro';
       >Back to Home</a
     >
   </main>
-</ErrorLayout>
+</BaseLayout>
 
 <style>
   @keyframes radar {

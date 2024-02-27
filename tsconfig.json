@@ -6,7 +6,9 @@
       "@components/*": ["./src/components/*"],
       "@content/*": ["./src/content/*"],
       "@icons/*": ["./src/components/icons/*"],
-      "@layouts/*": ["./src/layouts/*"]
+      "@layouts/*": ["./src/layouts/*"],
+      "@contracts/*": ["./src/contracts/*"],
+      "@contracts": ["./src/contracts"]
     }
   }
 }

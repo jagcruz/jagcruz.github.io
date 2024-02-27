@@ -1,21 +1,13 @@
 ---
-import EditorLayout from '@layouts/EditorLayout.astro';
+import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
-import Header from '@components/Header.astro';
 import Hero from '@components/Hero.astro';
-import Footer from '@components/Footer.astro';
 ---
 
-<EditorLayout
+<EditorPageLayout
   showGradient
   title="JAGC | Software Developer"
-  description="Jaime Alan Gutiérrez Cruz"
+  description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
 >
-  <Header />
-
-  <main class="relative flex-1 pl-64 pr-52">
-    <Hero />
-  </main>
-
-  <Footer />
-</EditorLayout>
+  <Hero />
+</EditorPageLayout>

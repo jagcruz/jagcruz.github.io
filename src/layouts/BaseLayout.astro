@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/fira-code';
+
 import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
@@ -30,7 +32,13 @@ const { title, description } = Astro.props;
     />
   </head>
 
-  <body class="bg-gray-900 text-white">
+  <body class="h-screen w-screen select-none overflow-hidden bg-[#010c15] p-16 text-[#607B96]">
     <slot />
+
+    <style is:global>
+      :root {
+        color-scheme: dark;
+      }
+    </style>
   </body>
 </html>
