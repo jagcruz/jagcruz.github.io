@@ -2,10 +2,9 @@
 import type { THeaderItemId, THeaderItem } from '@contracts';
 
 const navItems: THeaderItem[] = [
-  { id: 'home', text: '_home', href: import.meta.env.BASE_URL },
-  { id: 'experience', text: '_experience', href: '#' },
-  { id: 'projects', text: '_projects', href: '#' },
-  { id: 'about', text: '_about-me', href: '#' }
+  { id: 'home', text: '_home', href: '/' },
+  { id: 'about', text: '_about-me', href: '/about' },
+  { id: 'projects', text: '_projects', href: 'projects' }
 ];
 
 interface Props {
@@ -47,7 +46,7 @@ const { active = 'home' } = Astro.props;
 
     <span class="flex flex-1 justify-end">
       <a
-        href="#"
+        href="/contact"
         class:list={[
           'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
           { 'border-b-2 border-b-jagc-500 text-red-500': active === 'contact' }
