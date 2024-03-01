@@ -3,6 +3,8 @@ import '@fontsource-variable/fira-code';
 
 import { ViewTransitions } from 'astro:transitions';
 
+import DevNotice from '@components/DevNotice.astro';
+
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -39,6 +41,8 @@ const { title, description, showGradient = false } = Astro.props;
 
       <slot />
     </div>
+
+    <DevNotice />
 
     <style is:global>
       :root {
