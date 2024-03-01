@@ -1,0 +1,12 @@
+---
+interface Props {
+  lineNumber: number;
+}
+
+const { lineNumber } = Astro.props;
+---
+
+<li class="flex font-mono text-lg">
+  <span class="mr-10 w-5 text-right">{lineNumber}</span>
+  <slot />
+</li>
