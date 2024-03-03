@@ -1,0 +1,28 @@
+---
+import Sidebar from '@components/Sidebar.astro';
+---
+
+<Sidebar>
+  <details open>
+    <summary class="border-b border-b-line px-6 py-1 text-sm text-white">Contacts</summary>
+
+    <div class="border-b border-b-line py-1">
+      <ul class="flex flex-col gap-1 px-6 py-1 text-[#607B96]">
+        <li>email</li>
+        <li>phone</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open class="flex-1">
+    <summary class="border-b border-b-line px-6 py-1 text-sm text-white">Find me also in</summary>
+
+    <div class="py-1">
+      <ul class="flex flex-col gap-1 px-6 py-1 text-[#607B96]">
+        <li>Instagram</li>
+        <li>Discord</li>
+        <li>Telegram</li>
+      </ul>
+    </div>
+  </details>
+</Sidebar>

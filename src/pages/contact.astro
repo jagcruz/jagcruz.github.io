@@ -3,8 +3,9 @@ import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
 import CloseIcon from '@icons/Close.astro';
 
-import Sidebar from '@components/Sidebar.astro';
-import CodeLine from '@components/Contact/CodeLine.astro';
+import ContactBar from '@components/Contact/ContactBar.astro';
+import FormComponents from '@components/Contact/FormComponents.astro';
+import FormData from '@components/Contact/FormData.astro';
 ---
 
 <EditorPageLayout
@@ -12,193 +13,21 @@ import CodeLine from '@components/Contact/CodeLine.astro';
   title="JAGC | Software Developer"
   description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
 >
-  <Sidebar>
-    <details open>
-      <summary class="border-b border-b-line px-6 py-1 text-sm text-white">Contacts</summary>
-
-      <div class="border-b border-b-line py-1">
-        <ul class="flex flex-col gap-1 px-6 py-1 text-[#607B96]">
-          <li>email</li>
-          <li>phone</li>
-        </ul>
-      </div>
-    </details>
-
-    <details open class="flex-1">
-      <summary class="border-b border-b-line px-6 py-1 text-sm text-white">Find me also in</summary>
-
-      <div class="py-1">
-        <ul class="flex flex-col gap-1 px-6 py-1 text-[#607B96]">
-          <li>Instagram</li>
-          <li>Discord</li>
-          <li>Telegram</li>
-        </ul>
-      </div>
-    </details>
-  </Sidebar>
+  <ContactBar />
 
   <section class="relative flex size-full flex-col overflow-hidden">
     <p
       class="w-full animate-fade-right border-b border-b-line text-sm font-bold text-[#607B96] animate-duration-500 animate-ease-linear"
     >
-      <span class="flex w-40 items-center justify-between gap-1 border-r border-r-line px-3 py-1"
-        >contact.form <CloseIcon strokeWidth={5} width={12} height={12} /></span
-      >
+      <span class="flex w-40 items-center justify-between gap-1 border-r border-r-line px-3 py-1">
+        contact.form <CloseIcon strokeWidth={5} width={12} height={12} />
+      </span>
     </p>
 
     <form action="#" class="grid size-full grid-cols-2">
-      <div
-        class="col-start-1 flex flex-col items-center justify-center gap-3 border-r border-r-line px-32 font-mono"
-      >
-        <label for="name" class="flex w-full flex-col gap-1">
-          <span class="pl-1 text-[#607B96]">Name:</span>
+      <FormComponents />
 
-          <input
-            required
-            id="name"
-            type="text"
-            name="name"
-            autocomplete="name"
-            class="form-input w-full rounded-lg border-0 bg-[#011221] text-[#465E77] ring-1 ring-[#1E2D3D] focus:ring-[#607B96]"
-          />
-        </label>
-
-        <label for="email" class="flex w-full flex-col gap-1">
-          <span class="pl-1 text-[#607B96]">Email:</span>
-
-          <input
-            required
-            id="email"
-            type="email"
-            name="email"
-            autocomplete="email"
-            class="form-input mt-1 block w-full rounded-lg border-0 bg-[#011221] text-[#465E77] ring-1 ring-[#1E2D3D] focus:ring-[#607B96]"
-          />
-        </label>
-
-        <label for="message" class="flex w-full flex-col gap-1">
-          <span class="pl-1 text-[#607B96]">Message:</span>
-
-          <textarea
-            required
-            id="message"
-            name="message"
-            rows={4}
-            class="form-textarea mt-1 block h-36 w-full resize-none rounded-lg border-0 bg-[#011221] text-[#465E77] ring-1 ring-[#1E2D3D] focus:ring-[#607B96]"
-          ></textarea>
-        </label>
-
-        <button
-          type="submit"
-          class="mt-3 rounded-lg bg-[#1C2B3A] px-4 py-2 text-sm uppercase text-white hover:bg-[#263B50] hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-[#263B50] active:bg-[#011221]"
-          >submit message</button
-        >
-      </div>
-
-      <div class="col-start-2 flex items-center justify-center">
-        <ul class="font-mono text-[#607B96]">
-          <CodeLine lineNumber={1}>
-            <span class="text-[#C98BDF]">const&nbsp;</span>
-            <span class="text-[#5565E8]">button</span>
-            <span class="text-[#C98BDF]">&nbsp;=&nbsp;</span>
-            <span class="text-[#5565E8]">document</span>.
-            <span class="text-[#5565E8]">querySelector</span>
-            (<span class="text-[#FEA55F]">'#sendBtn'</span>);
-          </CodeLine>
-
-          <CodeLine lineNumber={2} />
-
-          <CodeLine lineNumber={3}>
-            <span class="text-[#C98BDF]">const&nbsp;</span>
-            <span class="text-[#5565E8]">contactMessage</span>
-            <span class="text-[#C98BDF]">&nbsp;=&nbsp;</span>&#123;
-          </CodeLine>
-
-          <CodeLine lineNumber={4}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">name</span>:&nbsp;
-            <span id="val-name" class="text-[#FEA55F]">""</span>,
-          </CodeLine>
-
-          <CodeLine lineNumber={5}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">email</span>:&nbsp;
-            <span id="val-email" class="text-[#FEA55F]">""</span>,
-          </CodeLine>
-
-          <CodeLine lineNumber={6}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">message</span>:&nbsp;
-            <span id="val-message" class="text-[#FEA55F]">""</span>,
-          </CodeLine>
-
-          <CodeLine lineNumber={7}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">date</span>:&nbsp;
-            <span id="val-date" class="text-[#FEA55F]">""</span>
-          </CodeLine>
-
-          <CodeLine lineNumber={8}>&#125;</CodeLine>
-
-          <CodeLine lineNumber={9} />
-
-          <CodeLine lineNumber={10}>
-            <span class="text-[#5565E8]">button</span>.
-            <span class="text-[#5565E8]">addEventListener</span>(
-            <span class="text-[#FEA55F]">'click'</span>, (
-            <span class="text-[#5565E8]">event</span>)
-            <span class="text-[#C98BDF]">&nbsp;=&gt;&nbsp;</span>&#123;
-          </CodeLine>
-
-          <CodeLine lineNumber={11}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">event</span>.
-            <span class="text-[#5565E8]">preventDefault</span>();
-          </CodeLine>
-
-          <CodeLine lineNumber={12}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="text-[#5565E8]">submitData</span>(
-            <span class="text-[#5565E8]">contactMessage</span>);
-          </CodeLine>
-
-          <CodeLine lineNumber={13}>&#125;);</CodeLine>
-        </ul>
-      </div>
+      <FormData />
     </form>
   </section>
 </EditorPageLayout>
-
-<script>
-  const resDate = document.getElementById('val-date');
-  if (resDate) {
-    const now = new Date();
-    resDate.innerHTML = `"${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][now.getDay()]} ${now.getDate()} ${now.getFullYear()}"`;
-  }
-
-  const inputName = document.getElementById('name');
-  const resName = document.getElementById('val-name');
-  if (inputName && resName) {
-    inputName.addEventListener('input', e => {
-      resName.innerHTML = `"${(e.target as HTMLInputElement).value}"`;
-    });
-  }
-
-  const inputEmail = document.getElementById('email');
-  const resEmail = document.getElementById('val-email');
-  if (inputEmail && resEmail) {
-    inputEmail.addEventListener('input', e => {
-      resEmail.innerHTML = `"${(e.target as HTMLInputElement).value}"`;
-    });
-  }
-
-  const resMessage = document.getElementById('val-message');
-  const inputMessage = document.getElementById('message');
-  if (inputMessage && resMessage) {
-    inputMessage.addEventListener('input', e => {
-      let msg = (e.target as HTMLInputElement).value.trim();
-      msg = msg.length > 30 ? `${msg.substring(0, 30).trim()}...` : msg;
-      resMessage.innerHTML = `"${msg}"`;
-    });
-  }
-</script>

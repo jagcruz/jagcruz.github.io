@@ -1,0 +1,108 @@
+---
+import CodeLine from './CodeLine.astro';
+---
+
+<div class="col-start-2 flex items-center justify-center">
+  <ul class="font-mono text-[#607B96]">
+    <CodeLine lineNumber={1}>
+      <span class="text-[#C98BDF]">const&nbsp;</span>
+      <span class="text-[#5565E8]">button</span>
+      <span class="text-[#C98BDF]">&nbsp;=&nbsp;</span>
+      <span class="text-[#5565E8]">document</span>.
+      <span class="text-[#5565E8]">querySelector</span>
+      (<span class="text-[#FEA55F]">'#sendBtn'</span>);
+    </CodeLine>
+
+    <CodeLine lineNumber={2} />
+
+    <CodeLine lineNumber={3}>
+      <span class="text-[#C98BDF]">const&nbsp;</span>
+      <span class="text-[#5565E8]">contactMessage</span>
+      <span class="text-[#C98BDF]">&nbsp;=&nbsp;</span>&#123;
+    </CodeLine>
+
+    <CodeLine lineNumber={4}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">name</span>:&nbsp;
+      <span id="val-name" class="text-[#FEA55F]">""</span>,
+    </CodeLine>
+
+    <CodeLine lineNumber={5}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">email</span>:&nbsp;
+      <span id="val-email" class="text-[#FEA55F]">""</span>,
+    </CodeLine>
+
+    <CodeLine lineNumber={6}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">message</span>:&nbsp;
+      <span id="val-message" class="text-[#FEA55F]">""</span>,
+    </CodeLine>
+
+    <CodeLine lineNumber={7}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">date</span>:&nbsp;
+      <span id="val-date" class="text-[#FEA55F]">""</span>
+    </CodeLine>
+
+    <CodeLine lineNumber={8}>&#125;</CodeLine>
+
+    <CodeLine lineNumber={9} />
+
+    <CodeLine lineNumber={10}>
+      <span class="text-[#5565E8]">button</span>.
+      <span class="text-[#5565E8]">addEventListener</span>(
+      <span class="text-[#FEA55F]">'click'</span>, (
+      <span class="text-[#5565E8]">event</span>)
+      <span class="text-[#C98BDF]">&nbsp;=&gt;&nbsp;</span>&#123;
+    </CodeLine>
+
+    <CodeLine lineNumber={11}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">event</span>.
+      <span class="text-[#5565E8]">preventDefault</span>();
+    </CodeLine>
+
+    <CodeLine lineNumber={12}>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-[#5565E8]">submitData</span>(
+      <span class="text-[#5565E8]">contactMessage</span>);
+    </CodeLine>
+
+    <CodeLine lineNumber={13}>&#125;);</CodeLine>
+  </ul>
+</div>
+
+<script>
+  const resDate = document.getElementById('val-date');
+  if (resDate) {
+    const now = new Date();
+    resDate.innerHTML = `"${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][now.getDay()]} ${now.getDate()} ${now.getFullYear()}"`;
+  }
+
+  const inputName = document.getElementById('name');
+  const resName = document.getElementById('val-name');
+  if (inputName && resName) {
+    inputName.addEventListener('input', e => {
+      resName.innerHTML = `"${(e.target as HTMLInputElement).value}"`;
+    });
+  }
+
+  const inputEmail = document.getElementById('email');
+  const resEmail = document.getElementById('val-email');
+  if (inputEmail && resEmail) {
+    inputEmail.addEventListener('input', e => {
+      resEmail.innerHTML = `"${(e.target as HTMLInputElement).value}"`;
+    });
+  }
+
+  const resMessage = document.getElementById('val-message');
+  const inputMessage = document.getElementById('message');
+  if (inputMessage && resMessage) {
+    inputMessage.addEventListener('input', e => {
+      let msg = (e.target as HTMLInputElement).value.trim();
+      msg = msg.length > 30 ? `${msg.substring(0, 30).trim()}...` : msg;
+      resMessage.innerHTML = `"${msg}"`;
+    });
+  }
+</script>
