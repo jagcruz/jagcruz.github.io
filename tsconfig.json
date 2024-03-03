@@ -4,11 +4,17 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+
       "@content/*": ["./src/content/*"],
-      "@icons/*": ["./src/components/icons/*"],
-      "@layouts/*": ["./src/layouts/*"],
+
       "@contracts/*": ["./src/contracts/*"],
-      "@contracts": ["./src/contracts"]
+      "@contracts": ["./src/contracts"],
+
+      "@icons/*": ["./src/components/icons/*"],
+      "@icons": ["./src/components/icons"],
+
+      "@layouts/*": ["./src/layouts/*"]
     }
   }
 }
