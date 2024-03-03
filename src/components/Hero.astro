@@ -1,5 +1,7 @@
 ---
 import HeroIcons from '@components/HeroIcons.astro';
+
+const baseURL = import.meta.env.PROD ? `${import.meta.env.SITE}/` : import.meta.env.BASE_URL;
 ---
 
 <section class="flex size-full gap-6 py-1 pl-64 pr-52">
@@ -13,7 +15,9 @@ import HeroIcons from '@components/HeroIcons.astro';
     <h3
       class="mb-8 animate-fade-right text-3xl font-bold text-[#4D5BCE] animate-duration-500 animate-ease-in-out"
     >
-      {'>'} And I'm a <span id="typed-text" class="text-[#FEA55F]"></span>
+      &gt; And I'm a&nbsp;<span
+        class="[@media(prefers-reduced-motion)]:before:content-['Software Engineer'] text-[#FEA55F] before:animate-[typing_13.5s_linear_infinite] before:content-[''] after:animate-[blink_0.5s_linear_infinite] after:border-r-4 after:border-r-[#4D5BCE] after:content-[''] [@media(prefers-reduced-motion)]:before:animate-[sequencePopup_12s_linear_infinite] [@media(prefers-reduced-motion)]:after:animate-none"
+      ></span>
     </h3>
 
     <ul
@@ -40,7 +44,7 @@ import HeroIcons from '@components/HeroIcons.astro';
     </a>
 
     <a
-      href="#lets-talk"
+      href={`${baseURL}contact`}
       class="-ml-2 -mt-3 flex w-fit animate-fade-up gap-2 px-2 py-1 text-base font-semibold text-white no-underline animate-delay-200 animate-duration-700 animate-ease-in-out hover:rounded-md hover:bg-line/50 hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-line"
     >
       <span class="text-[#4D5BCE]">const</span>
@@ -68,13 +72,182 @@ import HeroIcons from '@components/HeroIcons.astro';
   <HeroIcons />
 </section>
 
-<script>
-  import Typed from 'typed.js';
-  new Typed('#typed-text', {
-    strings: ['Software Engineer', 'Frontend Developer'],
-    typeSpeed: 100,
-    backSpeed: 80,
-    backDelay: 1200,
-    loop: true
-  });
-</script>
+<style>
+  @keyframes typing {
+    /* Software Engineer */
+    0.0000%,
+    47.8593% {
+      content: '';
+    }
+    1.1395%,
+    46.7198% {
+      content: 'S';
+    }
+    2.2791%,
+    45.5803% {
+      content: 'So';
+    }
+    3.4186%,
+    44.4408% {
+      content: 'Sof';
+    }
+    4.5581%,
+    43.3013% {
+      content: 'Sof';
+    }
+    5.6977%,
+    42.1618% {
+      content: 'Soft';
+    }
+    6.8372%,
+    41.0223% {
+      content: 'Softw';
+    }
+    7.9767%,
+    39.8828% {
+      content: 'Softwa';
+    }
+    9.1163%,
+    38.7433% {
+      content: 'Softwar';
+    }
+    10.2558%,
+    37.6038% {
+      content: 'Software';
+    }
+    11.3953%,
+    36.4643% {
+      content: 'Software ';
+    }
+    12.5348%,
+    35.3248% {
+      content: 'Software E';
+    }
+    13.6743%,
+    34.1853% {
+      content: 'Software En';
+    }
+    14.8138%,
+    33.0458% {
+      content: 'Software Eng';
+    }
+    15.9533%,
+    31.9063% {
+      content: 'Software Engi';
+    }
+    17.0928%,
+    30.7668% {
+      content: 'Software Engin';
+    }
+    18.2323%,
+    29.6273% {
+      content: 'Software Engine';
+    }
+    19.3718%,
+    28.4878% {
+      content: 'Software Enginee';
+    }
+    20.5113%,
+    27.3483% {
+      content: 'Software Engineer';
+    }
+
+    /* Frontend Developer */
+    48.9988%,
+    100% {
+      content: '';
+    }
+    50.1383%,
+    96.8578% {
+      content: 'F';
+    }
+    51.2778%,
+    95.7183% {
+      content: 'Fr';
+    }
+    52.4173%,
+    94.5788% {
+      content: 'Fro';
+    }
+    53.5568%,
+    93.4393% {
+      content: 'Fron';
+    }
+    54.6963%,
+    92.2998% {
+      content: 'Front';
+    }
+    55.8358%,
+    91.1603% {
+      content: 'Fronte';
+    }
+    56.9754%,
+    90.0208% {
+      content: 'Fronten';
+    }
+    58.1148%,
+    88.8813% {
+      content: 'Frontend';
+    }
+    59.2543%,
+    87.7418% {
+      content: 'Frontend ';
+    }
+    60.3938%,
+    86.6023% {
+      content: 'Frontend D';
+    }
+    61.5333%,
+    85.4628% {
+      content: 'Frontend De';
+    }
+    62.6728%,
+    84.3233% {
+      content: 'Frontend Dev';
+    }
+    63.8123%,
+    83.1838% {
+      content: 'Frontend Deve';
+    }
+    64.9518%,
+    82.0443% {
+      content: 'Frontend Devel';
+    }
+    66.0913%,
+    80.9048% {
+      content: 'Frontend Develo';
+    }
+    67.2308%,
+    79.7653% {
+      content: 'Frontend Develop';
+    }
+    68.3703%,
+    78.6258% {
+      content: 'Frontend Develope';
+    }
+    69.5098%,
+    77.4863% {
+      content: 'Frontend Developer';
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes sequencePopup {
+    0%,
+    100% {
+      content: 'Software Engineer';
+    }
+    50% {
+      content: 'Frontend Developer';
+    }
+  }
+</style>
