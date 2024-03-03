@@ -1,4 +1,6 @@
 ---
+import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
+
 import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
 import CloseIcon from '@icons/Close.astro';
@@ -8,11 +10,7 @@ import FormComponents from '@components/Contact/FormComponents.astro';
 import FormData from '@components/Contact/FormData.astro';
 ---
 
-<EditorPageLayout
-  active="contact"
-  title="JAGC | Software Developer"
-  description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
->
+<EditorPageLayout active="contact" title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
   <ContactBar />
 
   <section class="relative flex size-full flex-col overflow-hidden">
@@ -20,7 +18,15 @@ import FormData from '@components/Contact/FormData.astro';
       class="w-full animate-fade-right border-b border-b-line text-sm font-bold text-[#607B96] animate-duration-500 animate-ease-linear"
     >
       <span class="flex w-40 items-center justify-between gap-1 border-r border-r-line px-3 py-1">
-        contact.form <CloseIcon strokeWidth={5} width={12} height={12} />
+        contact.form
+
+        <a
+          href="/"
+          class="flex animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc-400"
+          aria-label="Close"
+        >
+          <CloseIcon strokeWidth={5} width={12} height={12} />
+        </a>
       </span>
     </p>
 

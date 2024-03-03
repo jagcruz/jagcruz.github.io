@@ -3,13 +3,13 @@ import XIcon from '@icons/X.astro';
 import FacebookIcon from '@icons/Facebook.astro';
 import LinkedInIcon from '@icons/LinkedIn.astro';
 import GitHubIcon from '@icons/GitHub.astro';
-import DiscordIcon from '@icons/Discord.astro';
+
+import { LINKS } from '@contracts';
 
 const socials = [
-  { href: 'https://www.linkedin.com/in/jagcruz', icon: LinkedInIcon },
-  { href: 'https://twitter.com/Tyto993', icon: XIcon },
-  { href: 'https://discordapp.com/users/719730313802154115', icon: DiscordIcon },
-  { href: 'https://www.facebook.com/jagutierrezcruz', icon: FacebookIcon }
+  { href: LINKS.LinkedIn, icon: LinkedInIcon },
+  { href: LINKS.X, icon: XIcon },
+  { href: LINKS.Facebook, icon: FacebookIcon }
 ];
 ---
 
@@ -27,8 +27,8 @@ const socials = [
       <a
         href={href}
         target="_blank"
-        rel="noopener noreferrer"
-        class="flex h-full w-14 animate-fade-right items-center justify-center border-r border-r-line px-2 transition-all animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-red-500"
+        rel="noopener noreferrer nofollow"
+        class="flex h-full w-14 animate-fade-right items-center justify-center border-r border-r-line px-2 transition-all animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-jagc-400"
       >
         <Icon />
       </a>
@@ -37,10 +37,10 @@ const socials = [
 
   <span class="flex h-full flex-1 justify-end">
     <a
-      class="flex h-full animate-fade-left items-center gap-2 border-l border-l-line pl-6 pr-6 transition-all duration-300 animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-red-500"
-      href="https://github.com/jagcruz"
+      class="flex h-full animate-fade-left items-center gap-2 border-l border-l-line pl-6 pr-6 transition-all duration-300 animate-duration-500 animate-ease-linear hover:bg-[#011221] hover:text-jagc-400"
+      href={LINKS.GitHub}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener noreferrer nofollow"
     >
       @jagcruz <GitHubIcon />
     </a>

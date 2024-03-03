@@ -3,9 +3,10 @@ interface Props {
   width?: number;
   height?: number;
   strokeWidth?: number;
+  className?: string;
 }
 
-const { width = 24, height = 24, strokeWidth = 2 } = Astro.props;
+const { width = 24, height = 24, strokeWidth = 2, className } = Astro.props;
 ---
 
 <svg
@@ -18,8 +19,9 @@ const { width = 24, height = 24, strokeWidth = 2 } = Astro.props;
   stroke-linecap="round"
   stroke-linejoin="round"
   stroke-width={strokeWidth}
+  class={className}
 >
-  <title>Brand X</title>
+  <title>X</title>
   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>

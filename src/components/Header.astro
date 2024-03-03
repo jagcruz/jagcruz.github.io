@@ -23,8 +23,8 @@ const { active = 'home' } = Astro.props;
     class="flex h-full w-64 items-center border-r border-r-line pl-6 text-base font-semibold animate-duration-500 animate-ease-linear"
   >
     <a
-      href={import.meta.env.SITE}
-      class="flex min-w-60 animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc"
+      href="/"
+      class="flex min-w-60 animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc-400"
     >
       <img src="/favicon.svg" alt="Logo" class="h-9" alt="JAGC Logo" />
       jaime-gutierrez
@@ -37,8 +37,8 @@ const { active = 'home' } = Astro.props;
         <a
           href={href}
           class:list={[
-            'flex h-full items-center border-r border-r-line px-2 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
-            { 'border-b-2 border-b-jagc-500 text-red-500': id === active }
+            'flex h-full items-center border-r border-r-line px-2 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
+            { 'border-b-2 border-b-jagc-500 text-jagc-400': id === active }
           ]}
         >
           {text}
@@ -50,8 +50,8 @@ const { active = 'home' } = Astro.props;
       <a
         href={`${baseURL}contact`}
         class:list={[
-          'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-red-500',
-          { 'border-b-2 border-b-jagc-500 text-red-500': active === 'contact' }
+          'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
+          { 'border-b-2 border-b-jagc-500 text-jagc-400': active === 'contact' }
         ]}>_contact-me</a
       >
     </span>

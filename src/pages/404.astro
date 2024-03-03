@@ -1,13 +1,11 @@
 ---
+import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
 import BaseLayout from '@layouts/BaseLayout.astro';
 
 const baseURL = import.meta.env.PROD ? `${import.meta.env.SITE}/` : import.meta.env.BASE_URL;
 ---
 
-<BaseLayout
-  title="JAGC | Software Developer"
-  description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
->
+<BaseLayout title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
   <main class="flex size-full flex-col items-center justify-center gap-4 font-mono">
     <div class="relative flex size-40 items-center justify-center">
       <div

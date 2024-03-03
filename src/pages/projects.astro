@@ -1,4 +1,5 @@
 ---
+import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
 import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
 import Sidebar from '@components/Sidebar.astro';
@@ -7,8 +8,8 @@ import Sidebar from '@components/Sidebar.astro';
 <EditorPageLayout
   showGradient
   active="projects"
-  title="JAGC | Software Developer"
-  description="I'm Jaime Gutiérrez, Software Developer with more than 5 years of experience in creating digital solutions. My goal is to transform ideas into functional code and deliver products that make a difference for both my clients and their users."
+  title={WEBSITE_TITLE}
+  description={WEBSITE_DESCRIPTION}
 >
   <Sidebar>&nbsp;</Sidebar>
 
