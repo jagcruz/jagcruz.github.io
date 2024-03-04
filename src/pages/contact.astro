@@ -30,10 +30,23 @@ import FormData from '@components/Contact/FormData.astro';
       </span>
     </p>
 
-    <form action="#" class="grid size-full grid-cols-2">
+    <form
+      class="grid size-full grid-cols-2"
+      action="https://formsubmit.co/bf93fb3c44a82838a5ca04690c5e7742"
+      method="post"
+    >
       <FormComponents />
 
       <FormData />
+
+      <input type="hidden" name="_template" value="basic" />
+      <input type="hidden" name="_next" value={`${import.meta.env.SITE}/contact`} />
+      <input type="hidden" name="_subject" value="Message from the JAGC site" />
+      <input
+        type="hidden"
+        name="_autoresponse"
+        value="Thanks for contacting me! I'll be in touch soon. Best regards, Jaime Gutiérrez"
+      />
     </form>
   </section>
 </EditorPageLayout>
