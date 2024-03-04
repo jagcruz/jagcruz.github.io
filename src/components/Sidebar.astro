@@ -1,9 +1,19 @@
 ---
+interface Props {
+  showGradient?: boolean;
+}
 
+const { showGradient = false } = Astro.props;
 ---
 
 <aside
   class="flex h-full min-w-64 max-w-64 animate-fade-right flex-col border-r border-r-line text-base font-thin animate-duration-500 animate-ease-linear"
 >
   <slot />
+
+  {
+    showGradient && (
+      <div class="absolute bottom-0 left-0 -z-[100] size-full animate-pulse blur-3xl animate-duration-[5000ms] animate-ease-in before:absolute before:-right-9 before:bottom-9 before:-z-10 before:size-24 before:rounded-full before:bg-[#4D5BCE] before:blur-3xl after:absolute after:bottom-9 after:left-0 after:-z-10 after:size-24 after:rounded-full after:bg-[#43D9AD] after:blur-3xl" />
+    )
+  }
 </aside>
