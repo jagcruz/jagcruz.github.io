@@ -17,10 +17,10 @@ const { active = 'home' } = Astro.props;
 ---
 
 <header
-  class="z-50 flex max-h-14 min-h-14 w-full items-center border-b border-b-line bg-transparent font-mono text-[#607B96] no-underline"
+  class="border-b-big-stone z-50 flex max-h-14 min-h-14 w-full items-center border-b bg-transparent font-mono text-[#607B96] no-underline"
 >
   <h4
-    class="flex h-full w-64 items-center border-r border-r-line pl-6 text-base font-semibold animate-duration-500 animate-ease-linear"
+    class="border-r-big-stone flex h-full w-64 items-center border-r pl-6 text-base font-semibold animate-duration-500 animate-ease-linear"
   >
     <a
       href="/"
@@ -37,7 +37,7 @@ const { active = 'home' } = Astro.props;
         <a
           href={href}
           class:list={[
-            'flex h-full items-center border-r border-r-line px-2 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
+            'border-r-big-stone flex h-full items-center border-r px-2 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
             { 'border-b-2 border-b-jagc-500 text-jagc-400': id === active }
           ]}
         >
@@ -50,7 +50,7 @@ const { active = 'home' } = Astro.props;
       <a
         href={`${baseURL}contact`}
         class:list={[
-          'flex h-full items-center border-l border-l-line pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
+          'border-l-big-stone flex h-full items-center border-l pl-6 pr-6 text-lg font-medium no-underline transition-all duration-300 hover:bg-[#011221] hover:text-jagc-400',
           { 'border-b-2 border-b-jagc-500 text-jagc-400': active === 'contact' }
         ]}>_contact-me</a
       >
