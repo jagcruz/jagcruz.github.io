@@ -1,0 +1,17 @@
+---
+import Folder from './icons/Folder.astro';
+import FolderOpen from './icons/FolderOpen.astro';
+---
+
+<span>
+  <FolderOpen
+    width={18}
+    height={18}
+    className="hidden group-open/folder:block group-hover:text-[#43D9AD]"
+  />
+  <Folder
+    width={18}
+    height={18}
+    className="block group-open/folder:hidden group-hover:text-[#43D9AD]"
+  />
+</span>

@@ -2,16 +2,11 @@
 import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
 import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
-import Sidebar from '@components/Sidebar.astro';
+import AboutBar from '@components/About/AboutBar.astro';
 ---
 
-<EditorPageLayout
-  showGradient
-  active="about"
-  title={WEBSITE_TITLE}
-  description={WEBSITE_DESCRIPTION}
->
-  <Sidebar>&nbsp;</Sidebar>
+<EditorPageLayout active="about" title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
+  <AboutBar />
 
   <section class="pl-6">
     <h1

@@ -1,0 +1,127 @@
+---
+import Sidebar from '@components/Sidebar.astro';
+import FoldersIcon from '@components/FoldersIcon.astro';
+
+import Mail from '@icons/Mail.astro';
+import Markdown from '@icons/Markdown.astro';
+---
+
+<Sidebar showGradient>
+  <details open>
+    <summary
+      class="cursor-pointer border-b border-b-line px-6 py-1 text-sm text-white hover:bg-[#011221]"
+    >
+      Personal Info
+    </summary>
+
+    <div class="border-b border-b-line py-1">
+      <ul class="flex flex-col gap-1 py-1 text-base text-[#607B96]">
+        <li>
+          <details open class="group/folder">
+            <summary
+              class="group flex cursor-pointer items-center gap-1 px-6 py-1 text-sm marker:content-[''] hover:bg-[#011221] hover:text-white"
+            >
+              <FoldersIcon />
+              <span>Development</span>
+            </summary>
+
+            <ul class="flex flex-col gap-1 py-1 text-base">
+              <li class="group hover:bg-[#011221] hover:text-white">
+                <a
+                  class="flex items-center gap-1 py-1 pl-12 pr-6"
+                  href="#"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <Markdown
+                    width={18}
+                    height={18}
+                    className="text-[#81A1C1] group-hover:text-[#E99287]"
+                  />
+                  <span>Experience</span>
+                </a>
+              </li>
+
+              <li class="group hover:bg-[#011221] hover:text-white">
+                <a
+                  class="flex items-center gap-1 py-1 pl-12 pr-6"
+                  href="#"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <Markdown
+                    width={18}
+                    height={18}
+                    className="text-[#81A1C1] group-hover:text-[#E99287]"
+                  />
+                  <span>Skills</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details class="group/folder">
+            <summary
+              class="group flex cursor-pointer items-center gap-1 px-6 py-1 text-sm marker:content-[''] hover:bg-[#011221] hover:text-white"
+            >
+              <FoldersIcon />
+              <span>Education</span>
+            </summary>
+
+            <ul class="flex flex-col gap-1 py-1 text-base">
+              <li class="group hover:bg-[#011221] hover:text-white">
+                <a
+                  class="flex items-center gap-1 py-1 pl-12 pr-6"
+                  href="#"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <Markdown
+                    width={18}
+                    height={18}
+                    className="text-[#81A1C1] group-hover:text-[#E99287]"
+                  />
+                  <span>University</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="group hover:bg-[#011221] hover:text-white">
+          <a class="flex items-center gap-1 px-6 py-1" href="#" rel="noopener noreferrer nofollow">
+            <Markdown
+              width={18}
+              height={18}
+              className="text-[#81A1C1] group-hover:text-[#E99287]"
+            />
+            <span>About me</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details open class="flex-1">
+    <summary
+      class="cursor-pointer border-b border-b-line px-6 py-1 text-sm text-white hover:bg-[#011221]"
+    >
+      Contacts
+    </summary>
+
+    <div class="py-1">
+      <ul class="flex flex-col gap-1 py-1 text-base text-[#607B96]">
+        <li class="group hover:bg-[#011221] hover:text-white">
+          <a
+            class="flex items-center gap-1 px-6 py-1"
+            href="mailto:jgutierrezcruz367@gmail.com?subject=[From%20JAGC]%20Hello%20Jaime!"
+            rel="noopener noreferrer nofollow"
+            aria-label="Email me at: jgutierrezcruz367@gmail.com"
+          >
+            <Mail width={18} height={18} className="group-hover:text-[#EA4335]" />
+            <span>jgutierrezcruz367@gmail...</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </details>
+</Sidebar>
