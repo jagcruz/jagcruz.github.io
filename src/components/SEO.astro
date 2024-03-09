@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={import.meta.env.SITE} />
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#cc0404" />
+
+<meta name="keywords" content="developer, frontend, software, jagc, jaime" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Tyto993" />
+<meta name="twitter:creator" content="@Tyto993" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${import.meta.env.SITE}/og-jagc.webp`} />
+<meta property="twitter:url" content={import.meta.env.SITE} />
+
+<meta name="og:type" content="website" />
+<meta name="og:url" content={import.meta.env.SITE} />
+<meta name="og:title" content={title} />
+<meta name="og:image" content={`${import.meta.env.SITE}/og-jagc.webp`} />
+<meta name="og:description" content={description} />
+<meta name="og:site_name" content="JAGC — Software Developer" />
+<meta name="og:locale" content="en_US" />
+
+<meta name="robots" content="index, follow" />

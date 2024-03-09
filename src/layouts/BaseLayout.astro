@@ -3,9 +3,11 @@ import '@fontsource-variable/fira-code';
 
 import { ViewTransitions } from 'astro:transitions';
 
+import SEO from '@components/SEO.astro';
+
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -16,29 +18,10 @@ const { title, description } = Astro.props;
   <head>
     <ViewTransitions />
 
-    <title>{title}</title>
-
-    <meta charset="UTF-8" />
-    <meta name="title" content={title} />
-    <meta name="description" property="og:description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={import.meta.env.SITE} />
-    <meta property="og:title" content={title} />
-    <meta property="og:image" content={`${import.meta.env.SITE}/og-jagc.webp`} />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={import.meta.env.SITE} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={`${import.meta.env.SITE}/og-jagc.webp`} />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title={title} description={description} />
   </head>
 
-  <body class="text-lynch-300 h-screen w-screen select-none overflow-hidden bg-[#010c15] p-16">
+  <body class="h-screen w-screen select-none overflow-hidden bg-[#010c15] p-16 text-lynch-300">
     <slot />
 
     <style is:global>
