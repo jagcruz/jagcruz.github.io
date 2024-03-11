@@ -87,7 +87,7 @@ export default {
           950: '#263300'
         },
         daintree: {
-          DEFAULT: '#004346',
+          DEFAULT: '#00d1ef',
           50: '#e9fffe',
           100: '#c9fffd',
           200: '#99ffff',
