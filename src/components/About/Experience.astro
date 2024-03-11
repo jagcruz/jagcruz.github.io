@@ -1,0 +1,31 @@
+---
+
+---
+
+<panel-experience id="experience">
+  <h1
+    class="flex size-full animate-fade items-center justify-center py-2 pl-64 pr-52 text-5xl font-extrabold text-jagc-400 drop-shadow-xl sm:text-8xl"
+  >
+    Experience
+  </h1>
+</panel-experience>
+
+<script>
+  import { PanelElement } from '@contracts/panel-element';
+
+  class PanelExperience extends PanelElement {
+    render() {
+      const treeItem = document.querySelector<HTMLSpanElement>('a[href="#experience"] span');
+
+      if (this.panelhash === '#experience' || !this.panelhash) {
+        this.classList.remove('hidden');
+        treeItem!.classList.add('text-electric-lime');
+      } else {
+        this.classList.add('hidden');
+        treeItem!.classList.remove('text-electric-lime');
+      }
+    }
+  }
+
+  customElements.define('panel-experience', PanelExperience);
+</script>
