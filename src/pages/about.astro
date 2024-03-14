@@ -2,23 +2,55 @@
 import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
 import EditorPageLayout from '@layouts/EditorPageLayout.astro';
 
+import CloseIcon from '@icons/Close.astro';
+
 import AboutBar from '@components/About/AboutBar.astro';
 import Experience from '@components/About/Experience.astro';
 import Skills from '@components/About/Skills.astro';
-import University from '@components/About/University.astro';
 import Me from '@components/About/Me.astro';
+
+const tabs = [{ text: 'experience.me' }, { text: 'skills.me' }, { text: 'about.me' }];
 ---
 
 <EditorPageLayout active="about" title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
   <AboutBar />
 
-  <section class="size-full overflow-y-auto overflow-x-hidden">
-    <Experience />
+  <section class="flex size-full flex-col overflow-hidden">
+    <p
+      class="flex h-7 w-full animate-fade-right border-b border-b-big-stone text-sm font-bold text-lynch-300 animate-duration-500 animate-ease-linear"
+    >
+      {
+        tabs.map(({ text }) => (
+          <span class="flex w-40 items-center justify-between gap-1 border-r border-r-big-stone px-3 py-1">
+            {text}
 
-    <Skills />
+            <CloseIcon
+              strokeWidth={5}
+              width={12}
+              height={12}
+              className="animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc-400"
+            />
+          </span>
+        ))
+      }
+    </p>
 
-    <University />
+    <div class="grid h-full grid-cols-2 overflow-hidden">
+      <div class="col-start-1 overflow-y-auto overflow-x-hidden">
+        <Experience />
 
-    <Me />
+        <Skills />
+
+        <Me />
+      </div>
+
+      <div class="col-start-2 border-l border-l-big-stone bg-black-pearl-975 p-6 text-lynch-300">
+        <h1
+          class="flex size-full animate-fade items-center justify-center py-2 pl-64 pr-52 text-5xl font-extrabold drop-shadow-xl sm:text-8xl"
+        >
+          Here's something I don't know yet
+        </h1>
+      </div>
+    </div>
   </section>
 </EditorPageLayout>

@@ -41,6 +41,30 @@ const { title, description, showGradient = false } = Astro.props;
     <style is:global>
       :root {
         color-scheme: dark;
+
+        --sb-track-color: #011627;
+        --sb-thumb-color: #607b96;
+        --sb-size: 12px;
+      }
+
+      *::-webkit-scrollbar {
+        width: var(--sb-size);
+      }
+
+      *::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+        border-radius: 0.5rem;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: var(--sb-thumb-color);
+        border-radius: 0.5rem;
+      }
+
+      @supports not selector(::-webkit-scrollbar) {
+        * {
+          scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+        }
       }
     </style>
   </body>
