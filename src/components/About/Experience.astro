@@ -16,13 +16,16 @@
   class PanelExperience extends PanelElement {
     render() {
       const treeItem = document.querySelector<HTMLSpanElement>('a[href="#experience"] span');
+      const tabItem = document.querySelector<HTMLAnchorElement>('p span a[href="#experience"]');
 
       if (this.panelhash === '#experience' || !this.panelhash) {
         this.classList.remove('hidden');
-        treeItem!.classList.add('text-electric-lime');
+        treeItem?.classList?.add('text-electric-lime');
+        tabItem?.classList?.add('text-electric-lime-200');
       } else {
         this.classList.add('hidden');
-        treeItem!.classList.remove('text-electric-lime');
+        treeItem?.classList?.remove('text-electric-lime');
+        tabItem?.classList?.remove('text-electric-lime-200');
       }
     }
   }

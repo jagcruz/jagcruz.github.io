@@ -9,7 +9,11 @@ import Experience from '@components/About/Experience.astro';
 import Skills from '@components/About/Skills.astro';
 import Me from '@components/About/Me.astro';
 
-const tabs = [{ text: 'experience.me' }, { text: 'skills.me' }, { text: 'about.me' }];
+const tabs = [
+  { hash: 'experience', text: 'experience.me', label: 'Experience' },
+  { hash: 'skills', text: 'skills.me', label: 'Skills' },
+  { hash: 'me', text: 'about.me', label: 'About Me' }
+];
 ---
 
 <EditorPageLayout active="about" title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
@@ -20,23 +24,22 @@ const tabs = [{ text: 'experience.me' }, { text: 'skills.me' }, { text: 'about.m
       class="flex h-7 w-full animate-fade-right border-b border-b-big-stone text-sm font-bold text-lynch-300 animate-duration-500 animate-ease-linear"
     >
       {
-        tabs.map(({ text }) => (
-          <span class="flex w-40 items-center justify-between gap-1 border-r border-r-big-stone px-3 py-1">
-            {text}
+        tabs.map(({ text, hash, label }) => (
+          <span class="flex w-40 cursor-pointer items-center justify-between gap-1 border-r border-r-big-stone py-1 pl-3 pr-2 hover:bg-black-pearl-975 hover:text-jagc-300">
+            <a href={`#${hash}`} class="flex-1" aria-label={label}>
+              {text}
+            </a>
 
-            <CloseIcon
-              strokeWidth={5}
-              width={12}
-              height={12}
-              className="animate-fade-right items-center gap-2 transition-all duration-300 animate-duration-500 animate-ease-linear hover:text-jagc-400"
-            />
+            <button class="animate-fade-right items-center rounded p-1 text-lynch-300 transition-all duration-300 animate-duration-500 animate-ease-linear hover:bg-lynch-300/20 hover:text-jagc-400">
+              <CloseIcon strokeWidth={5} width={12} height={12} />
+            </button>
           </span>
         ))
       }
     </p>
 
     <div class="grid h-full grid-cols-2 overflow-hidden">
-      <div class="col-start-1 overflow-y-auto overflow-x-hidden">
+      <div class="col-start-1 flex flex-col gap-2 overflow-y-auto overflow-x-hidden">
         <Experience />
 
         <Skills />
@@ -57,7 +60,7 @@ const tabs = [{ text: 'experience.me' }, { text: 'skills.me' }, { text: 'about.m
   import createGlobe from 'cobe';
 
   let phi = 0;
-  let canvas = document.getElementById('globe')! as HTMLCanvasElement;
+  const canvas = document.getElementById('globe')! as HTMLCanvasElement;
 
   createGlobe(canvas, {
     devicePixelRatio: 1,

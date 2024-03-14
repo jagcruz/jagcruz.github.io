@@ -22,7 +22,7 @@
     */`
       .split('\n')
       .map(line => {
-        return <p class="animate-fade text-2xl font-medium text-lynch">{line}</p>;
+        return <p class="animate-fade px-6 text-2xl font-medium text-lynch">{line}</p>;
       })
   }
 </panel-me>
@@ -33,13 +33,16 @@
   class PanelMe extends PanelElement {
     render() {
       const treeItem = document.querySelector<HTMLSpanElement>('a[href="#me"] span');
+      const tabItem = document.querySelector<HTMLAnchorElement>('p span a[href="#me"]');
 
       if (this.panelhash === '#me') {
         this.classList.remove('hidden');
-        treeItem!.classList.add('text-electric-lime');
+        treeItem?.classList?.add('text-electric-lime');
+        tabItem?.classList?.add('text-electric-lime-200');
       } else {
         this.classList.add('hidden');
-        treeItem!.classList.remove('text-electric-lime');
+        treeItem?.classList.remove('text-electric-lime');
+        tabItem?.classList?.remove('text-electric-lime-200');
       }
     }
   }
