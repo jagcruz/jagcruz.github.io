@@ -27,7 +27,11 @@ import Markdown from '@icons/Markdown.astro';
 
             <ul class="flex flex-col gap-1 py-1 text-base">
               <li class="group hover:bg-black-pearl-975 hover:text-electric-lime">
-                <a class="flex items-center gap-1 py-1 pl-12 pr-6 font-medium" href="#experience">
+                <a
+                  class="flex items-center gap-1 py-1 pl-12 pr-6 font-medium"
+                  href="#experience"
+                  aria-label="Experience"
+                >
                   <Markdown
                     width={18}
                     height={18}
@@ -38,7 +42,11 @@ import Markdown from '@icons/Markdown.astro';
               </li>
 
               <li class="group hover:bg-black-pearl-975 hover:text-electric-lime">
-                <a class="flex items-center gap-1 py-1 pl-12 pr-6 font-medium" href="#skills">
+                <a
+                  class="flex items-center gap-1 py-1 pl-12 pr-6 font-medium"
+                  href="#skills"
+                  aria-label="Skills"
+                >
                   <Markdown
                     width={18}
                     height={18}
@@ -52,7 +60,7 @@ import Markdown from '@icons/Markdown.astro';
         </li>
 
         <li class="group hover:bg-black-pearl-975 hover:text-electric-lime">
-          <a class="flex items-center gap-1 px-6 py-1 font-medium" href="#me">
+          <a class="flex items-center gap-1 px-6 py-1 font-medium" href="#me" aria-label="About Me">
             <Markdown width={18} height={18} className="text-[#81A1C1] group-hover:text-daintree" />
             <span>About me</span>
           </a>
