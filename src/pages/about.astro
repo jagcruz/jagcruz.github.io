@@ -44,13 +44,45 @@ const tabs = [{ text: 'experience.me' }, { text: 'skills.me' }, { text: 'about.m
         <Me />
       </div>
 
-      <div class="col-start-2 border-l border-l-big-stone bg-black-pearl-975 p-6 text-lynch-300">
-        <h1
-          class="flex size-full animate-fade items-center justify-center py-2 pl-64 pr-52 text-5xl font-extrabold drop-shadow-xl sm:text-8xl"
-        >
-          Here's something I don't know yet
-        </h1>
+      <div
+        class="col-start-2 flex items-center justify-center border-l border-l-big-stone bg-black-pearl-975 text-lynch-300"
+      >
+        <canvas id="globe" class="size-full" width="600" height="600"></canvas>
       </div>
     </div>
   </section>
 </EditorPageLayout>
+
+<script>
+  import createGlobe from 'cobe';
+
+  let phi = 0;
+  let canvas = document.getElementById('globe')! as HTMLCanvasElement;
+
+  createGlobe(canvas, {
+    devicePixelRatio: 1,
+    width: 600,
+    height: 600,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 1.2,
+    mapSamples: 16000,
+    mapBrightness: 6,
+    baseColor: [30 / 255, 45 / 255, 71 / 255],
+    markerColor: [96 / 255, 123 / 255, 150 / 255],
+    glowColor: [1 / 255, 22 / 255, 39 / 255],
+    scale: 1.2,
+    opacity: 0.9,
+    offset: [150, -30],
+    markers: [
+      { location: [28.52536, -83.22579], size: 0.03 }, // USA
+      { location: [21.521757, -77.781167], size: 0.06 }, // Cuba
+      { location: [-32.522779, -55.765835], size: 0.09 } // Uruguay
+    ],
+    onRender: state => {
+      state.phi = phi;
+      phi += 0.01;
+    }
+  });
+</script>
