@@ -1,10 +1,57 @@
 ---
+import DevNotice from '@components/DevNotice.astro';
 import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
-import EditorPageLayout from '@layouts/EditorPageLayout.astro';
-
-import Hero from '@components/Hero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<EditorPageLayout showGradient title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
-  <Hero />
-</EditorPageLayout>
+<BaseLayout title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
+  <main class="flex size-full flex-col items-center justify-center gap-4 font-mono">
+    <div class="relative flex size-40 items-center justify-center">
+      <div
+        class="relative z-0 flex size-full items-center justify-center overflow-hidden rounded-full border border-big-stone bg-transparent shadow-2xl shadow-black-pearl before:absolute before:inset-5 before:rounded-full before:border before:border-dashed before:border-big-stone before:bg-transparent before:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] before:content-[''] after:absolute after:size-12 after:rounded-full after:border after:border-dashed after:border-big-stone after:shadow-[inset_-5px_-5px_25px_rgba(0,0,0,0.25),_inset_5px_5px_35px_rgba(0,0,0,0.25)] after:content-['']"
+      >
+        <span
+          class="absolute left-1/2 top-1/2 h-full w-1/2 origin-top-left animate-[radar_2s_linear_infinite] border-t border-dashed border-t-white bg-transparent drop-shadow-[20px_20px_20px_#cc0404] before:absolute before:left-0 before:top-0 before:size-full before:origin-top-left before:-rotate-[55deg] before:bg-jagc/45 before:blur-xl before:content-['']"
+        ></span>
+      </div>
+
+      <span
+        class="before:absolute before:left-0 before:top-0 before:z-10 before:inline before:size-full before:animate-[emit-pulse_2s_ease-out_infinite] before:rounded-full before:border-4 before:border-jagc/30 before:content-['']"
+      ></span>
+    </div>
+
+    <h1 class="py-2 text-5xl font-extrabold text-jagc drop-shadow-xl sm:text-8xl">
+      Page not found
+    </h1>
+
+    <p class="pb-2 text-lg font-semibold sm:text-4xl">
+      Sorry, the page you are looking for could not be found or has been removed.
+    </p>
+  </main>
+
+  <DevNotice />
+</BaseLayout>
+
+<style>
+  @keyframes radar {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes emit-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+</style>

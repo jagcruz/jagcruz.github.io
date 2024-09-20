@@ -1,8 +1,7 @@
 ---
+import DevNotice from '@components/DevNotice.astro';
 import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from '@contracts';
 import BaseLayout from '@layouts/BaseLayout.astro';
-
-const baseURL = import.meta.env.PROD ? `${import.meta.env.SITE}/` : import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={WEBSITE_TITLE} description={WEBSITE_DESCRIPTION}>
@@ -28,13 +27,9 @@ const baseURL = import.meta.env.PROD ? `${import.meta.env.SITE}/` : import.meta.
     <p class="pb-2 text-lg font-semibold sm:text-4xl">
       Sorry, the page you are looking for could not be found or has been removed.
     </p>
-
-    <a
-      href={baseURL}
-      class="cursor-pointer rounded-lg border-0 bg-[#FEA55F] px-3 py-2 text-lg font-semibold text-[#01080E] outline outline-2 outline-offset-0 outline-[#FEA55F] transition-all duration-100 ease-in-out hover:bg-[#FFAC6B] hover:outline hover:outline-4 hover:outline-offset-4 hover:outline-[#FFAC6B]"
-      >Back to Home</a
-    >
   </main>
+
+  <DevNotice />
 </BaseLayout>
 
 <style>
